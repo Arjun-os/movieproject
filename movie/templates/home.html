@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<h2 class="mt-4">Welcome to Home page</h2></center>
+
+        <!--CARD-->
+{% for movie in m %}
+
+<div class="card" style="width: 18rem;">
+  <img src="{{ movie.image.url }}" height="250px" width="250px">
+  <div class="card-body">
+    <h5 class="card-title">{{ movie.title }}</h5>
+    <p class="card-text">{{ movie.desc }}</p>
+    <a href="{% url 'film:moviedetails' p=movie.id %}"  class="btn btn-primary">Details</a>  </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}

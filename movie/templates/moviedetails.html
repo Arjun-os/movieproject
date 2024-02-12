@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<center>
+<h2 class="mt-4"> Movie Details</h2></center>
+
+        <!--CARD-->
+
+<div class="card" style="width: 18rem;">
+  <img src="{{ d.image.url }}" height="400px" width="350px">
+</div>
+
+<div class="moviedt">
+    <h3>{{ d.title }}</h3>
+    <p>{{ d.desc }}</p>
+    <p>{{ d.year }}</p>
+</div>
+
+<center>
+    <div>
+<a href="{% url 'film:movieedit' p=d.id %}" class="btn btn-danger">Edit</a>
+        <a href="{% url 'film:deletemovie' p=d.id %}" class="btn btn-danger">Delete</a>
+    </div>
+</center>
+
+
+
+
+{% endblock %}
